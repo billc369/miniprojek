@@ -19,4 +19,6 @@ Notes to document
 5. Database telah dibuat
 
 - Cara menjalankan proyek secara lokal
+menjalankan server pake command php -S localhost:8000 di terminal
+
 - Fitur utama yang telah diimplementasikan
