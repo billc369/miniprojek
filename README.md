@@ -3,7 +3,7 @@ Sistem Tabungan Mahasiswa berbasis PHP dan MySQL
 
 Todo
 [x] Setup Database
-[] Login
+[x] Login
 [] Register
 [] User add saving (amount + message)
 [] Admin System (Can see everybody's savings)
@@ -37,4 +37,4 @@ Notes to document
 2. Commit 2: tes commit
 3. Commit 3: menjalankan server pake local command php -S localhost:8000
 4. Commit 4: bisa akses beberapa page
-5. 
+5. Commit 5: Page Login sudah dibuat interfacenya, tapi bagian send POST form ke backend blm dibuat.
