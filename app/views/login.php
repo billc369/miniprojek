@@ -1,2 +1,5 @@
-// Login Page
+<!-- Login Page -->
+
+<?php
+echo "Login";
 

@@ -1,2 +1,5 @@
-// Logout
+<!-- Logout -->
+
+<?php
+echo "Logout";
 

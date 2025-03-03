@@ -1,2 +1,5 @@
-// Register Page
+<!-- Register Page -->
+
+<?php
+echo "Register";
 

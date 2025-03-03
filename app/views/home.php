@@ -1,2 +1,4 @@
-// Home Page, main menu
+<!-- Home Page, main menu -->
 
+<?php
+echo "Home";
