@@ -1,16 +1,27 @@
-<!-- Home Page, main menu -->
+<!-- Login Page -->
+
+// TODO: Send POST Form to Server for Verification
 
 <!DOCTYPE html>
 
 <head>
-    <title>Home Page</title>
+    <title>Login Page</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <h1>Login Page</h1>
+    <form method="POST" action="index.php?url=home">
+        <label>Email:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
     <ul>
-        <li><a href="index.php?url=admin">Admin</a></li>
-        <li><a href="index.php?url=save">Save</a></li>
-        <li><a href="index.php?url=logout">Logout</a></li>
+        <li><a href="index.php?url=register">Register</a></li>
     </ul>
 </body>
 </html>
+

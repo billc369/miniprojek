@@ -1,5 +1,8 @@
 <!-- Register Page -->
 
+//TODO: Created_at Javascript
+// TODO: Check if email is unique because email == user_id
+
 <!DOCTYPE html>
 
 <head>
@@ -7,6 +10,21 @@
 </head>
 <body>
     <h1>Registry Page</h1>
+
+    <form method="POST" action="index.php?url=register">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <br>
+        <label>Email:</label>
+        <input type="text" name="email" required>
+        <br>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <input type="hidden" name="created_at" value="created_at">
+        <button type="submit">Login</button>
+    </form>
+
     <ul>
         <li><a href="index.php?url=login">Login</a></li>
     </ul>
