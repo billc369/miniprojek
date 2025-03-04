@@ -1,5 +1,7 @@
 <!-- Login Page -->
 
+// TODO: Send POST Form to Server for Verification
+
 <!DOCTYPE html>
 
 <head>
@@ -7,9 +9,9 @@
 </head>
 <body>
     <h1>Login Page</h1>
-    <form method="POST" action="index.php?url=home">
-        <label>Username:</label>
-        <input type="text" name="username" required>
+    <form method="POST">
+        <label>Email:</label>
+        <input type="text" name="email" required>
         <br>
         <label>Password:</label>
         <input type="password" name="password" required>
@@ -22,3 +24,4 @@
     </ul>
 </body>
 </html>
+

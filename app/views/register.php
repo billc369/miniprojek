@@ -1,6 +1,6 @@
 <!-- Register Page -->
 
-//TODO: Created_at Javascript
+//TODO: Created_at changed to backend
 // TODO: Check if email is unique because email == user_id
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
 <body>
     <h1>Registry Page</h1>
 
-    <form method="POST" action="index.php?url=register">
+    <form method="POST">
         <label>Name:</label>
         <input type="text" name="name" required>
         <br>
@@ -20,8 +20,6 @@
         <br>
         <label>Password:</label>
         <input type="password" name="password" required>
-        <br>
-        <input type="hidden" name="created_at" value="created_at">
         <button type="submit">Login</button>
     </form>
 
