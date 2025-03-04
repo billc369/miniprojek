@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Admin Page</h1>
+    
     <ul>
         <li><a href="index.php?url=logout">Logout</a></li>
     </ul>

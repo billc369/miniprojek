@@ -9,6 +9,9 @@ class AuthController {
         $this->db = $database->connect();
         require_once 'app/models/User.php';
         $this->userModel = new User($this->db);
+
+        require_once 'app/models/Saving.php';
+        $this->savingModel = new Saving($this->db);
     }
 
     public function login() {
@@ -61,6 +64,6 @@ class AuthController {
     }
 
     public function admin() {
-        require_once 'app/views/admin.php';
+        
     }
 }

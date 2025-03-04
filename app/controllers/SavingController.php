@@ -3,6 +3,18 @@
 
 <?php
 class SavingController {
+    private $db;
+    
+    public function __construct() {
+        $database = new Database();
+        $this->db = $database->connect();
+        require_once 'app/models/User.php';
+        $this->userModel = new User($this->db);
+
+        require_once 'app/models/Saving.php';
+        $this->savingModel = new Saving($this->db);
+    }
+
     public function save() {
         require_once 'app/views/save.php';
 
@@ -12,8 +24,16 @@ class SavingController {
             $message = $_POST['message'];
             $created_at = date("Y-m-d h:i:sa");
 
-            echo $name . $amount . $message . $created_at;
-            echo "<br>Very Nice";
+            $result = $this->savingModel->save($user_id, $amount, $message, $created_at);
+            if ($result === true){
+                header("Location: index.php?url=home");
+                exit;
+            } 
+            else {
+                // Error
+                echo "FAILED";
+                // echo $result;
+            }
         }
     }
 }

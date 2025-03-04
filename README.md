@@ -42,4 +42,4 @@ Notes to document
 7. Commit 7: server sudah bisa terima semua POST nya, tapi blm bisa cek atau proses dari database. Jadi blm ada verification from dari database and data processing. Hanya bisa terima.
 8. Commit 8: sudah connect ke DB, dan sudah bisa verify user, tapi blm buat session, and blm bedain admin sama user biasa
 9. Commit 9: Register juga Sudah connected to DB
-10.
+10. Commit 10: Add savings to DB
