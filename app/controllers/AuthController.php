@@ -2,6 +2,15 @@
 
 <?php
 class AuthController {
+    private $db;
+
+    public function __construct() {
+        $database = new Database();
+        $this->db = $database->connect();
+        require_once 'app/models/User.php';
+        $this->userModel = new User($this->db);
+    }
+
     public function login() {
         require_once 'app/views/login.php';
 
@@ -10,19 +19,23 @@ class AuthController {
             $password = $_POST['password'];
 
             // if get email is (role == admin) and (password is correct)
-            if ($email == 'admin' && $password == 'adminpassword'){
-                // Create Admin Session
+            // if ($this->userModel->isAdmin($email, $password)){
+            //     // Create Admin Session
 
-            } 
+            // } 
             // if (password is correct)
-            else if ($email == 'bill' && $password == 'password'){
+            if ($this->userModel->login($email, $password)){
                 // Create Session
-                echo "<br>Very Nice";
-
+                header("Location: index.php?url=home");
+                exit;
             } 
             // Wrong Password or Username doesn't exists
             else {
-                
+                echo "Wrong";
+                // if email exists:
+                    // echo "Wrong Password";
+                // else:
+                    // echo "Email doesnt exists"
             }
         }
     }

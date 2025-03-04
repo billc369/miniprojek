@@ -40,3 +40,4 @@ Notes to document
 5. Commit 5: Page Login sudah dibuat interfacenya, tapi bagian send POST form ke backend blm dibuat.
 6. Commit 6: setiap page sudah ada form nya, jadi sudah bisa input data ke dalam form page
 7. Commit 7: server sudah bisa terima semua POST nya, tapi blm bisa cek atau proses dari database. Jadi blm ada verification from dari database and data processing. Hanya bisa terima.
+8. Commit 8: sudah connect ke DB, dan sudah bisa verify user, tapi blm buat session, and blm bedain admin sama user biasa
