@@ -64,6 +64,7 @@ class AuthController {
     }
 
     public function admin() {
-        
+        $result = $this->savingModel->retrieve();
+        require_once 'app/views/admin.php';
     }
 }
