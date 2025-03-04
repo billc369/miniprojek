@@ -18,24 +18,16 @@ class AuthController {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            // if get email is (role == admin) and (password is correct)
-            // if ($this->userModel->isAdmin($email, $password)){
-            //     // Create Admin Session
-
-            // } 
             // if (password is correct)
-            if ($this->userModel->login($email, $password)){
+            $result = $this->userModel->login($email, $password);
+            if ($result === true){
                 // Create Session
                 header("Location: index.php?url=home");
                 exit;
             } 
-            // Wrong Password or Username doesn't exists
             else {
-                echo "Wrong";
-                // if email exists:
-                    // echo "Wrong Password";
-                // else:
-                    // echo "Email doesnt exists"
+                // Wrong Password or Username doesn't exists
+                echo $result;
             }
         }
     }
@@ -49,13 +41,23 @@ class AuthController {
             $password = $_POST['password'];
             $created_at = date("Y-m-d h:i:sa");
 
-            echo $name . $email . $password . $created_at;
-            echo "<br>Very Nice";
+            $result = $this->userModel->register($name, $email, $password, $created_at);
+            if ($result === true){
+                // Create Session
+                header("Location: index.php?url=home");
+                exit;
+            } 
+            else {
+                // Wrong Password or Username doesn't exists
+                echo $result;
+            }
         }
     }
 
     public function logout() {
         require_once 'app/views/logout.php';
+        header("Location: index.php?url=login");
+        exit;
     }
 
     public function admin() {
