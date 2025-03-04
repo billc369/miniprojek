@@ -31,9 +31,21 @@ class Saving {
             SELECT s.id, u.name AS name, s.amount, s.message, s.created_at
             FROM {$this->table} s
             INNER JOIN users u ON s.user_id = u.id
+            WHERE s.user_id = ?
+        ");
+
+        $stmt->execute([$_SESSION['user_id']]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all records
+    }
+    
+    public function retrieve_all() {
+        $stmt = $this->conn->prepare("
+            SELECT s.id, u.name AS name, s.amount, s.message, s.created_at
+            FROM {$this->table} s
+            INNER JOIN users u ON s.user_id = u.id
         ");
 
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all records
-    }    
+    }
 }

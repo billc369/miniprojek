@@ -62,9 +62,4 @@ class AuthController {
         header("Location: index.php?url=login");
         exit;
     }
-
-    public function admin() {
-        $result = $this->savingModel->retrieve();
-        require_once 'app/views/admin.php';
-    }
 }

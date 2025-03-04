@@ -4,9 +4,9 @@ Sistem Tabungan Mahasiswa berbasis PHP dan MySQL
 Todo
 [x] Setup Database
 [x] Login
-[] Register
-[] User add saving (amount + message)
-[] Admin System (Can see everybody's savings)
+[x] Register
+[x] User add saving (amount + message)
+[x] Admin System (Can see everybody's savings)
 [] Logout
 [] Middleware to check admin and login
 
@@ -44,3 +44,4 @@ Notes to document
 9. Commit 9: Register juga Sudah connected to DB
 10. Commit 10: Add savings to DB
 11. Commit 11: sudah ada page buat liat semua transaksi saving, ttp blm ada filter buat saving
+12. Commit 12: sudah tambah session, retrieve sudah ada filter, Home page menunjukkan saving transactions, sudah bisa logout, saving jg sudah sesuai user_id

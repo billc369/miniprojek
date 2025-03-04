@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Admin Page</h1>
+    
     <?php
         foreach ($result as $s) {
             echo "<p>{$s['name']} - {$s['amount']} - {$s['message']} - {$s['created_at']}</p>";

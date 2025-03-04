@@ -1,7 +1,5 @@
 <!-- Form to add Savings -->
 
-//TODO: Get username from session
-
 <!DOCTYPE html>
 
 <head>
@@ -17,7 +15,7 @@
         <label>Message:</label>
         <input type="text" name="message" required>
         <br>
-        <input type="hidden" name="user_id" value="1">
+        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']?>">
         <br>
         <button type="submit">Save</button>
     </form>

@@ -1,8 +1,5 @@
 <!-- Register Page -->
 
-//TODO: Created_at changed to backend
-// TODO: Check if email is unique because email == user_id
-
 <!DOCTYPE html>
 
 <head>

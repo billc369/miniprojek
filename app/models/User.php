@@ -24,6 +24,9 @@ class User {
         
         // TODO: HASH PASSWORD
         if ($user && $password == $user['password']) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['role'] = $user['role'];
             return true;
         } else if ($user) {
             return "Wrong Password";
