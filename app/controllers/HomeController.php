@@ -13,14 +13,19 @@ class HomeController {
     }
 
     public function index() {
+        require_once 'app/helpers/AuthMiddleware.php';
+        AuthMiddleware::isAuthenticated();
+
         require_once 'app/models/User.php';
         $savingModel = new Saving($this->db);
         $result = $this->savingModel->retrieve();
+        $isAdmin = $_SESSION['role'] === 'admin';
         require_once 'app/views/home.php';
     }
 
     public function admin() {
-        // Is Admin
+        require_once 'app/helpers/AuthMiddleware.php';
+        AuthMiddleware::isAdmin();
         
         require_once 'app/models/User.php';
         $savingModel = new Saving($this->db);

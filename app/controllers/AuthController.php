@@ -15,17 +15,20 @@ class AuthController {
     }
 
     public function login() {
+        require_once 'app/helpers/AuthMiddleware.php';
+        AuthMiddleware::isGuest();
+
         require_once 'app/views/login.php';
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            // if (password is correct)
+            // if (password is correct):
+                // Create Session Here
             $result = $this->userModel->login($email, $password);
             if ($result === true){
-                // Create Session
-                header("Location: index.php?url=home");
+                header("Location: home");
                 exit;
             } 
             else {
@@ -36,6 +39,9 @@ class AuthController {
     }
 
     public function register() {
+        require_once 'app/helpers/AuthMiddleware.php';
+        AuthMiddleware::isGuest();
+
         require_once 'app/views/register.php';
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -46,8 +52,8 @@ class AuthController {
 
             $result = $this->userModel->register($name, $email, $password, $created_at);
             if ($result === true){
-                // Create Session
-                header("Location: index.php?url=home");
+                // Head to Login Page
+                header("Location: login");
                 exit;
             } 
             else {
@@ -59,7 +65,7 @@ class AuthController {
 
     public function logout() {
         require_once 'app/views/logout.php';
-        header("Location: index.php?url=login");
+        header("Location: login");
         exit;
     }
 }

@@ -4,7 +4,7 @@
 <?php
 class SavingController {
     private $db;
-    
+
     public function __construct() {
         $database = new Database();
         $this->db = $database->connect();
@@ -16,6 +16,9 @@ class SavingController {
     }
 
     public function save() {
+        require_once 'app/helpers/AuthMiddleware.php';
+        AuthMiddleware::isAuthenticated();
+
         require_once 'app/views/save.php';
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,7 +29,7 @@ class SavingController {
 
             $result = $this->savingModel->save($user_id, $amount, $message, $created_at);
             if ($result === true){
-                header("Location: index.php?url=home");
+                header("Location: home");
                 exit;
             } 
             else {

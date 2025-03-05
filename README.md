@@ -7,8 +7,8 @@ Todo
 [x] Register
 [x] User add saving (amount + message)
 [x] Admin System (Can see everybody's savings)
-[] Logout
-[] Middleware to check admin and login
+[x] Logout
+[x] Middleware to check admin and login
 
 Notes to document
 - Cara mengatur database
@@ -28,10 +28,6 @@ Notes to document
 5. http://localhost:8000/index.php?url=admin
 6. http://localhost:8000/index.php?url=save
 
-- Fitur utama yang telah diimplementasikan
-
-
-
 - Perubahan setiap commit
 1. Commit 1: setup database
 2. Commit 2: tes commit
@@ -45,3 +41,4 @@ Notes to document
 10. Commit 10: Add savings to DB
 11. Commit 11: sudah ada page buat liat semua transaksi saving, ttp blm ada filter buat saving
 12. Commit 12: sudah tambah session, retrieve sudah ada filter, Home page menunjukkan saving transactions, sudah bisa logout, saving jg sudah sesuai user_id
+13. Commit 13: sudah tambah Middleware buat cek admin, user biasa, atau guest yg blm login. Register setelah buat akun redirect ke login page, biar sessionnya gak ribet.

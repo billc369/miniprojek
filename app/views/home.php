@@ -15,9 +15,13 @@
     ?>
 
     <ul>
-        <li><a href="index.php?url=admin">Admin</a></li>
-        <li><a href="index.php?url=save">Save</a></li>
-        <li><a href="index.php?url=logout">Logout</a></li>
+        <?php 
+            if($isAdmin) {
+                echo "<li><a href='admin'>Admin</a></li>";
+            } 
+        ?>
+        <li><a href="save">Save</a></li>
+        <li><a href="logout">Logout</a></li>
     </ul>
 </body>
 </html>
