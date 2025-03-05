@@ -42,3 +42,4 @@ Notes to document
 11. Commit 11: sudah ada page buat liat semua transaksi saving, ttp blm ada filter buat saving
 12. Commit 12: sudah tambah session, retrieve sudah ada filter, Home page menunjukkan saving transactions, sudah bisa logout, saving jg sudah sesuai user_id
 13. Commit 13: sudah tambah Middleware buat cek admin, user biasa, atau guest yg blm login. Register setelah buat akun redirect ke login page, biar sessionnya gak ribet.
+14. Commit 14: ubah css dan tabel

@@ -1,13 +1,3 @@
-
-<!-- 
- User Attribute:
-- id
-- name
-- email
-- password
-- role 
--->
-
 <?php
 class User {
     private $conn;
@@ -17,13 +7,13 @@ class User {
         $this->conn = $db;
     }
 
+    //untuk log in dan create session
     public function login($email, $password) {
         $stmt = $this->conn->prepare("SELECT id, name, role, password FROM {$this->table} WHERE email = ?");
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        // TODO: HASH PASSWORD
-        if ($user && $password == $user['password']) {
+        if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['name'] = $user['name'];
             $_SESSION['role'] = $user['role'];
@@ -31,25 +21,25 @@ class User {
         } else if ($user) {
             return "Wrong Password";
         } else {
-            return "User doesn't exists";
+            return "User doesn't exist";
         }
 
         return false;
     }
 
+    //untuk regis user
     public function register($name, $email, $password, $created_at) {
-        $stmt = $this->conn->prepare("SELECT id, name, role, password FROM {$this->table} WHERE email = ?");
+        $stmt = $this->conn->prepare("SELECT id FROM {$this->table} WHERE email = ?");
         $stmt->execute([$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
             return "Email is taken";
         } else {
-            // Put new user into DB
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $this->conn->prepare("INSERT INTO {$this->table} (name, email, password, created_at) VALUES (?, ?, ?, ?)");
             
-            // TODO: HASH PASSWORD
-            if ($stmt->execute([$name, $email, $password, $created_at])) {
+            if ($stmt->execute([$name, $email, $hashed_password, $created_at])) {
                 return true;
             }
         }
@@ -57,3 +47,4 @@ class User {
         return false;
     }
 }
+?>

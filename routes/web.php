@@ -2,6 +2,12 @@
 class Router {
     public function route($url) {
         switch($url) {
+            case 'admin':
+                require_once 'app/controllers/HomeController.php';
+                $controller = new HomeController();
+                $controller->admin();
+                break;
+            
             case 'home':
                 require_once 'app/controllers/HomeController.php';
                 $controller = new HomeController();
@@ -24,12 +30,6 @@ class Router {
                 require_once 'app/controllers/AuthController.php';
                 $controller = new AuthController();
                 $controller->register();
-                break;
-            
-            case 'admin':
-                require_once 'app/controllers/AuthController.php';
-                $controller = new AuthController();
-                $controller->admin();
                 break;
             
             case 'save':

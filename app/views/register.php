@@ -1,29 +1,33 @@
-<!-- Register Page -->
-
 <!DOCTYPE html>
-
+<html>
 <head>
-    <title>Registry Page</title>
+    <title>Register - Mini Saving</title>
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 <body>
-    <h1>Registry Page</h1>
+    <nav>
+        <h1>Mini Saving</h1>
+        <a href="home">Home</a>
+    </nav>
 
-    <form method="POST">
-        <label>Name:</label>
-        <input type="text" name="name" required>
-        <br>
-        <label>Email:</label>
-        <input type="text" name="email" required>
-        <br>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <br>
-        <button type="submit">Register</button>
-    </form>
-
-    <ul>
-        <li><a href="index.php?url=login">Login</a></li>
-    </ul>
+    <main>
+        <h2>Register</h2>
+        <form method="POST" action="register">
+            <div>
+                <label>Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login">Login</a></p>
+    </main>
 </body>
 </html>
-

@@ -16,6 +16,7 @@ class Saving {
         $this->conn = $db;
     }
 
+    // untuk menyimpan saving user
     public function save($user_id, $amount, $message, $created_at) {
         $stmt = $this->conn->prepare("INSERT INTO {$this->table} (user_id, amount, message, created_at) VALUES (?, ?, ?, ?)");
 
@@ -26,6 +27,7 @@ class Saving {
         return false;
     }
 
+    //retrieve saving user yg sdg log in 
     public function retrieve() {
         $stmt = $this->conn->prepare("
             SELECT s.id, u.name AS name, s.amount, s.message, s.created_at
@@ -37,7 +39,8 @@ class Saving {
         $stmt->execute([$_SESSION['user_id']]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetch all records
     }
-    
+
+    //retrieve saving semua user
     public function retrieve_all() {
         $stmt = $this->conn->prepare("
             SELECT s.id, u.name AS name, s.amount, s.message, s.created_at
